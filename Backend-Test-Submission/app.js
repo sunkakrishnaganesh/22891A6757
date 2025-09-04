@@ -102,7 +102,6 @@ app.get("/:code", async (req, res) => {
   res.redirect(entry.url);
 });
 
-// Stats route
 app.get("/shorturls/:code", async (req, res) => {
   const code = req.params.code;
   const entry = urlStore.get(code);
@@ -119,7 +118,5 @@ app.get("/shorturls/:code", async (req, res) => {
     clicks: entry.clicks
   });
 });
-
-// ===== Server Startup =====
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server running on port ${port}`));
